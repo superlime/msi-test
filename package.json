@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Zuuriix/bot_msi#readme",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.5.0",
     "file-exists": "^5.0.1",
     "fs": "0.0.1-security",
     "sqlite3": "^4.0.8"
