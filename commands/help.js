@@ -1,19 +1,18 @@
 const Discord = require('discord.js')
 
-exports.run = (client, message, args, guild) => {
+exports.run = (client, message, args, config) => {
     const helpEmbed = {
         color: 0x33cc33,
         title: 'Help',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'prefix : ?',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: '?list',
                 value: 'Show you the list of the auto-attributable roles. \n -----',
             },
@@ -44,10 +43,10 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
-    
+
     message.channel.send({ embed: helpEmbed });
 }

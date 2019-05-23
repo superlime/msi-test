@@ -1,1 +1,5 @@
-{"token":"TOKEN HERE","prefix":"?"}
+{
+    "token": "TOKEN HERE",
+    "prefix": "?",
+    "botName": "MSI#9822"
+}
