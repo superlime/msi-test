@@ -1,19 +1,18 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
-exports.run = (client, message, args, guild) => {
+exports.run = (client, message, args, config) => {
     const unitsEmbed = {
         color: 0x33cc33,
         title: 'Units',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the Units.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: '?units physic',
                 value: 'Show units of physical type',
                 inline: true,
@@ -31,7 +30,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -40,7 +39,7 @@ exports.run = (client, message, args, guild) => {
         color: 0xffcc00,
         title: 'Physical units',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the physical units.',
@@ -89,7 +88,7 @@ exports.run = (client, message, args, guild) => {
                 name: 'ARABIAN SOLDIER',
                 value: 'REBEL ARMY',
                 inline: true,
-            },           
+            },
             {
                 name: 'GUERILLA',
                 value: 'REBEL ARMY \n --------------------',
@@ -124,7 +123,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -133,7 +132,7 @@ exports.run = (client, message, args, guild) => {
         color: 0xff6600,
         title: 'Fire units',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the fire units.',
@@ -200,7 +199,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -209,7 +208,7 @@ exports.run = (client, message, args, guild) => {
         color: 0x0066ff,
         title: 'Lightning units',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the lightning units.',
@@ -256,19 +255,19 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
 
-    switch(args[0]){
-        case('physic'):
+    switch (args[0]) {
+        case ('physic'):
             message.channel.send({ embed: phyUnitsEmbed });
             break;
-        case('fire'):
+        case ('fire'):
             message.channel.send({ embed: fireUnitsEmbed });
             break;
-        case('lightning'):
+        case ('lightning'):
             message.channel.send({ embed: lightUnitsEmbed });
             break;
         default:

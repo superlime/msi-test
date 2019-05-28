@@ -1,19 +1,18 @@
 const Discord = require('discord.js')
 
-exports.run = (client, message, args, guild) => {
+exports.run = (client, message, args, config) => {
     const helpEmbed = {
         color: 0x33cc33,
         title: 'Informations',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Some useful informations about the bot and the server',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: 'Server\'s administrators',
                 value: 'Hoopa#4832\nBunnyFace#3294\n-----',
             },
@@ -28,10 +27,10 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
-    
+
     message.channel.send({ embed: helpEmbed });
 }

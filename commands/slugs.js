@@ -1,19 +1,18 @@
 const Discord = require('discord.js')
 
-exports.run = (client, message, args, guild) => {
+exports.run = (client, message, args, config) => {
     const slugEmbed = {
         color: 0x33cc33,
         title: 'Slugs',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the slugs.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: '?slugs n',
                 value: 'Show slugs of N rarity',
                 inline: true,
@@ -36,7 +35,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -45,15 +44,14 @@ exports.run = (client, message, args, guild) => {
         color: 0x663300,
         title: 'Slugs N',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the slugs of N rarity.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: 'Battered MINI U.F.O',
                 value: 'ANOTHER FORCE',
             },
@@ -96,7 +94,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -105,15 +103,14 @@ exports.run = (client, message, args, guild) => {
         color: 0x3399ff,
         title: 'Slugs R',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the slugs of R rarity.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: 'DI-COKKA',
                 value: 'REBEL ARMY',
             },
@@ -168,7 +165,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -177,15 +174,14 @@ exports.run = (client, message, args, guild) => {
         color: 0x9900ff,
         title: 'Slugs SR',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the slugs of SR rarity.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: 'IRON ISO',
                 value: 'REBEL ARMY',
             },
@@ -216,7 +212,7 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
@@ -225,15 +221,14 @@ exports.run = (client, message, args, guild) => {
         color: 0xff9900,
         title: 'Slugs SSR',
         author: {
-            name: '@Bot MSI#9822',
+            name: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
         description: 'Commands for the slugs of SSR rarity.',
         thumbnail: {
             url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
-        fields: [
-            {
+        fields: [{
                 name: 'SHOE',
                 value: 'REBEL ARMY',
             },
@@ -272,22 +267,22 @@ exports.run = (client, message, args, guild) => {
         ],
         timestamp: new Date(),
         footer: {
-            text: '@Bot MSI#9822',
+            text: `@Bot ${config.botName}`,
             icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
         },
     };
 
-    switch(args[0]){
-        case('n'):
+    switch (args[0]) {
+        case ('n'):
             message.channel.send({ embed: slugNEmbed });
             break;
-        case('r'):
+        case ('r'):
             message.channel.send({ embed: slugREmbed });
             break;
-        case('sr'):
+        case ('sr'):
             message.channel.send({ embed: slugSREmbed });
             break;
-        case('ssr'):
+        case ('ssr'):
             message.channel.send({ embed: slugSSREmbed });
             break;
         default:
