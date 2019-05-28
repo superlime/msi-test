@@ -43,6 +43,15 @@ exports.run = (client, message, args, config) => {
         // Find the role they now fit in
         let commanderRole = message.guild.roles.find(function(role) { return role.name == `Commander ${commanderGroup}`; });
 
+        if (commanderRole == null) {
+            return message.channel.send({
+                embed: {
+                    color: 0x33cc33,
+                    description: `Error, role 'Commander ${commanderLevel}' could not be located.  Please contact the server administrator.`
+                }
+            });
+        }
+
         // Find any current commander level roles, other than the one they're now in
         let currentRoles = member.roles.filter(
             function(role) { return role.name.startsWith("Commander ") && role.name != commanderRole.name; });
@@ -73,7 +82,8 @@ exports.run = (client, message, args, config) => {
         } else if (matches.length == 1) { // CL tag in username, replace
             nameTemp = member.displayName.replace(clRegex, ` [CL ${commanderLevel}]`);
         } else { // Multiple CL tags in username, remove and re-add
-            nameTemp = member.displayName.replace(clRegex, "");
+            nameTemp = member.displayName.replace(new RegExp(clRegex, "g"), "");
+            nameTemp = `${nameTemp} [CL ${commanderLevel}]`;
         }
 
         console.log(`Changing ${member.displayName} to ${nameTemp}`);
