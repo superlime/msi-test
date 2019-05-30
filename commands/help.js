@@ -14,14 +14,14 @@ exports.run = (client, message, args, config) => {
         },
         fields: [{
                 name: '?list',
-                value: 'Show you the list of the auto-attributable roles. \n -----',
+                value: 'Show you the list of the supported roles. \n -----',
             },
             {
-                name: '?rank commander x / clx',
+                name: '?level x',
                 value: 'Change your role according to your level of commander. \n -----',
             },
             {
-                name: '?rank server x / sx',
+                name: '?server x',
                 value: 'Change your role according to your server. \n -----',
             },
             {

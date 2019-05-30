@@ -24,15 +24,39 @@ let server5 = "S5";
 let server6 = "S6";
 let server7 = "S7";
 
-let retour = "\n"
+let retour = "\n";
 
 exports.run = (client, message, args, config) => {
-    const listEmbed = new Discord.RichEmbed()
-        .setTitle("List of the self attributable roles")
-        .setAuthor(`@Bot ${config.botName}`, "https://i.imgur.com/U8L4NR8.jpg")
-        .setColor(0x00AE86)
-        .setDescription(role10 + retour + role20 + retour + role30 + retour + role40 + retour + role50 + retour + role60 + retour + role70 + retour + role80 + retour + role90 + retour + role100 + retour + role110 + retour + role120 + retour + role130 + retour + role140 + retour + role150 + retour + server1 + retour + server2 + retour + server3 + retour + server4 + retour + server5)
-        .setFooter(`@Bot ${config.botName}`, "https://i.imgur.com/U8L4NR8.jpg")
+
+    let commanderRoles = message.guild.roles.filter(function(role) { return role.name.startsWith("Commander "); });
+    let serverRoles = message.guild.roles.filter(function(role) { return /S\d+/.test(role.name); });
+
+    let listEmbed = {
+        color: 0x00AE86,
+        title: 'Commander and Server Roles supported',
+        author: {
+            name: `@Bot ${config.botName}`,
+            icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
+        },
+        description: 'Valid Commander and Server Roles currently supported by this Discord',
+        thumbnail: {
+            url: 'https://i.imgur.com/U8L4NR8.jpg',
+        },
+        fields: [{
+                name: 'Commander Roles',
+                value: commanderRoles.map(function(role) { return role.name; }).join("\n"),
+            },
+            {
+                name: 'Server Roles',
+                value: serverRoles.map(function(role) { return role.name; }).join("\n"),
+            },
+        ],
+        timestamp: new Date(),
+        footer: {
+            text: `@Bot ${config.botName}`,
+            icon_url: 'https://i.imgur.com/U8L4NR8.jpg',
+        },
+    };
 
     message.channel.send({ embed: listEmbed });
 }
